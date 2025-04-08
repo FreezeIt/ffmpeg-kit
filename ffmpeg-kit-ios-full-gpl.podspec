@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-    s.name             = 'ffmpeg-kit-ios-full-gpl'
+    s.name             = 'ffmpeg_kit_flutter_full_gpl'
     s.version          = '6.0'
     s.summary          = 'FFmpegKit for iOS with full-gpl configuration'
     s.description      = 'FFmpegKit prebuilt xcframework for iOS, full-gpl version.'
