@@ -123,7 +123,7 @@ Pod::Spec.new do |s|
     ss.public_header_files  = 'Classes/**/*.h'
     ss.dependency 'ffmpeg-kit-ios-full-gpl', "6.0"
     ss.ios.deployment_target = '12.1'
-    ss.vendored_frameworks = 'https://github.com/FreezeIt/ffmpeg-kit/releases/download/v6.0/ffmpeg-kit-full-gpl-6.0-ios-xcframework-fixed.zip'
+    ss.vendored_frameworks = 'https://github.com/FreezeIt/ffmpeg-kit/releases/download/v6.0/ffmpeg-kit-full-gpl-6.0-ios-xcframework.zip'
   end
 
   s.subspec 'full-gpl-lts' do |ss|
