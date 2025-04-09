@@ -19,17 +19,7 @@ Pod::Spec.new do |s|
   #s.public_header_files = 'Classes/**/*.h'
   #s.header_mappings_dir = 'Classes'
 
-  s.vendored_frameworks = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework'
-  s.public_header_files = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/**/*.h'
-  s.header_mappings_dir = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework'
-  s.module_map = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/ios-arm64_arm64e/ffmpegkit.framework/Modules/module.modulemap'
-
   s.dependency 'Flutter'
-  s.pod_target_xcconfig = {
-    'DEFINES_MODULE' => 'YES',
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
-    'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/ffmpeg_kit_flutter_full_gpl_custom/ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/ios-arm64_arm64e/ffmpegkit.framework/Headers"'
-  }
 
   # ใช้เฉพาะ subspec นี้เท่านั้น
   s.default_subspec = 'full-gpl'
@@ -37,7 +27,9 @@ Pod::Spec.new do |s|
   s.subspec 'full-gpl' do |ss|
     ss.source_files         = 'Classes/**/*'
     ss.public_header_files  = 'Classes/**/*.h'
-    s.vendored_frameworks = [
+    ss.header_mappings_dir  = 'Classes'
+
+    ss.vendored_frameworks = [
       'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework',
       'ffmpeg-kit-full-gpl-6.0-ios-xcframework/libavcodec.xcframework',
       'ffmpeg-kit-full-gpl-6.0-ios-xcframework/libavfilter.xcframework',
@@ -47,8 +39,17 @@ Pod::Spec.new do |s|
       'ffmpeg-kit-full-gpl-6.0-ios-xcframework/libswscale.xcframework',
       'ffmpeg-kit-full-gpl-6.0-ios-xcframework/libavdevice.xcframework'
     ]
-    ss.header_mappings_dir = '.'
+
     ss.preserve_paths = '*.xcframework'
     ss.ios.deployment_target = '12.1'
+
+    ss.pod_target_xcconfig = {
+      'DEFINES_MODULE' => 'YES',
+      'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
+      'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/ffmpeg_kit_flutter_full_gpl_custom/ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/ios-arm64_arm64e/ffmpegkit.framework/Headers"',
+      'MODULEMAP_FILE' => '"${PODS_ROOT}/ffmpeg_kit_flutter_full_gpl_custom/ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/ios-arm64_arm64e/ffmpegkit.framework/Modules/module.modulemap"'
+    }
+
+    ss.module_map = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/ios-arm64_arm64e/ffmpegkit.framework/Modules/module.modulemap'
   end
 end
