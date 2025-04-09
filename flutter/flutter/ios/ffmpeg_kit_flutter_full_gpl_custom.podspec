@@ -42,14 +42,12 @@ Pod::Spec.new do |s|
 
     ss.preserve_paths = '*.xcframework'
     ss.ios.deployment_target = '12.1'
+    ss.module_map = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/ios-arm64_arm64e/ffmpegkit.framework/Modules/module.modulemap'
 
     ss.pod_target_xcconfig = {
       'DEFINES_MODULE' => 'YES',
       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
-      'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/ffmpeg_kit_flutter_full_gpl_custom/ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/ios-arm64_arm64e/ffmpegkit.framework/Headers"',
-      'MODULEMAP_FILE' => '"${PODS_ROOT}/ffmpeg_kit_flutter_full_gpl_custom/ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/ios-arm64_arm64e/ffmpegkit.framework/Modules/module.modulemap"'
+      'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/ffmpeg_kit_flutter_full_gpl_custom/ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/ios-arm64_arm64e/ffmpegkit.framework/Headers"'
     }
-
-    ss.module_map = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/ios-arm64_arm64e/ffmpegkit.framework/Modules/module.modulemap'
   end
 end
