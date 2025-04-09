@@ -30,6 +30,18 @@ Pod::Spec.new do |s|
   s.subspec 'full-gpl' do |ss|
     ss.source_files         = 'Classes/**/*'
     ss.public_header_files  = 'Classes/**/*.h'
+    ss.vendored_frameworks = [
+      'ffmpegkit.xcframework',
+      'libavcodec.xcframework',
+      'libavfilter.xcframework',
+      'libavformat.xcframework',
+      'libavutil.xcframework',
+      'libswresample.xcframework',
+      'libswscale.xcframework',
+      'libavdevice.xcframework'
+    ]
+    ss.header_mappings_dir = '.'
+    ss.preserve_paths = '*.xcframework'
     ss.ios.deployment_target = '12.1'
   end
 end
