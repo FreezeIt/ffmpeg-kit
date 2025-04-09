@@ -1,4 +1,4 @@
-name: ffmpeg_kit_flutter_full_gpl
+name: ffmpeg_kit_flutter_full_gpl_custom
 description: FFmpeg Kit for Flutter. Supports Android, iOS and macOS platforms.
 repository: https://github.com/FreezeIt/ffmpeg-kit
 issue_tracker: https://github.com/FreezeIt/ffmpeg-kit/issues
