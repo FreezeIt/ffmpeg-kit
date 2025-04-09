@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
     ss.source_files         = 'Classes/**/*'
     ss.public_header_files  = 'Classes/**/*.h'
     ss.vendored_frameworks = [
-      '.ffmpegkit.xcframework',
+      'ffmpegkit.xcframework',
       'libavcodec.xcframework',
       'libavfilter.xcframework',
       'libavformat.xcframework',
