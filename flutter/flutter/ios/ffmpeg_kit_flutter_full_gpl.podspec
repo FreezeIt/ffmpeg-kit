@@ -11,7 +11,9 @@ Pod::Spec.new do |s|
   s.requires_arc     = true
   s.static_framework = true
 
-  s.source           = { :path => '.' }
+  s.source = {
+    :http => 'https://github.com/FreezeIt/ffmpeg-kit/releases/download/v6.0/ffmpeg-kit-full-gpl-6.0-ios-xcframework.zip'
+  }
 
   s.source_files        = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
