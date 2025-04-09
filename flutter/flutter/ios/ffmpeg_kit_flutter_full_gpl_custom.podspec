@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework'
   s.public_header_files = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/**/*.h'
   s.header_mappings_dir = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework'
+  s.module_map = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/ios-arm64_arm64e/ffmpegkit.framework/Modules/module.modulemap'
 
   s.dependency 'Flutter'
   s.pod_target_xcconfig = {
@@ -36,15 +37,15 @@ Pod::Spec.new do |s|
   s.subspec 'full-gpl' do |ss|
     ss.source_files         = 'Classes/**/*'
     ss.public_header_files  = 'Classes/**/*.h'
-    ss.vendored_frameworks = [
-      'ffmpegkit.xcframework',
-      'libavcodec.xcframework',
-      'libavfilter.xcframework',
-      'libavformat.xcframework',
-      'libavutil.xcframework',
-      'libswresample.xcframework',
-      'libswscale.xcframework',
-      'libavdevice.xcframework'
+    s.vendored_frameworks = [
+      'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework',
+      'ffmpeg-kit-full-gpl-6.0-ios-xcframework/libavcodec.xcframework',
+      'ffmpeg-kit-full-gpl-6.0-ios-xcframework/libavfilter.xcframework',
+      'ffmpeg-kit-full-gpl-6.0-ios-xcframework/libavformat.xcframework',
+      'ffmpeg-kit-full-gpl-6.0-ios-xcframework/libavutil.xcframework',
+      'ffmpeg-kit-full-gpl-6.0-ios-xcframework/libswresample.xcframework',
+      'ffmpeg-kit-full-gpl-6.0-ios-xcframework/libswscale.xcframework',
+      'ffmpeg-kit-full-gpl-6.0-ios-xcframework/libavdevice.xcframework'
     ]
     ss.header_mappings_dir = '.'
     ss.preserve_paths = '*.xcframework'
