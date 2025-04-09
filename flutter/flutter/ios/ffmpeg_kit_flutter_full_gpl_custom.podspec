@@ -15,14 +15,19 @@ Pod::Spec.new do |s|
     :http => 'https://github.com/FreezeIt/ffmpeg-kit/releases/download/v6.0/ffmpeg-kit-full-gpl-6.0-ios-xcframework.zip'
   }
 
-  s.source_files        = 'Classes/**/*'
-  s.public_header_files = 'Classes/**/*.h'
-  s.header_mappings_dir = 'Classes'
+  #s.source_files        = 'Classes/**/*'
+  #s.public_header_files = 'Classes/**/*.h'
+  #s.header_mappings_dir = 'Classes'
+
+  s.vendored_frameworks = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework'
+  s.public_header_files = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/**/*.h'
+  s.header_mappings_dir = 'ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework'
 
   s.dependency 'Flutter'
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386'
+    'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/ffmpeg_kit_flutter_full_gpl_custom/ffmpeg-kit-full-gpl-6.0-ios-xcframework/ffmpegkit.xcframework/ios-arm64_arm64e/ffmpegkit.framework/Headers"'
   }
 
   # ใช้เฉพาะ subspec นี้เท่านั้น
