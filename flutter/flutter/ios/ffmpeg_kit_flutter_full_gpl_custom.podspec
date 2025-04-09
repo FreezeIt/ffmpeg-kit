@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
   s.source_files        = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
+  s.header_mappings_dir = 'Classes'
 
   s.dependency 'Flutter'
   s.pod_target_xcconfig = {

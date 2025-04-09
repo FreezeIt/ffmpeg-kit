@@ -1,0 +1,4 @@
+module ffmpeg_kit_flutter_full_gpl_custom {
+  header "FFmpegKitFlutterPlugin.h"
+  export *
+}
