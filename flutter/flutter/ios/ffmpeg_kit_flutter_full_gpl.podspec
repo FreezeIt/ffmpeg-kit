@@ -31,13 +31,13 @@ Pod::Spec.new do |s|
     ss.source_files         = 'Classes/**/*'
     ss.public_header_files  = 'Classes/**/*.h'
     ss.vendored_frameworks = [
-      'Frameworks/ffmpegkit.xcframework',
-      'Frameworks/libavcodec.xcframework',
-      'Frameworks/libavfilter.xcframework',
-      'Frameworks/libavformat.xcframework',
-      'Frameworks/libavutil.xcframework',
-      'Frameworks/libswresample.xcframework',
-      'Frameworks/libswscale.xcframework'
+      '.ffmpegkit.xcframework',
+      'libavcodec.xcframework',
+      'libavfilter.xcframework',
+      'libavformat.xcframework',
+      'libavutil.xcframework',
+      'libswresample.xcframework',
+      'libswscale.xcframework'
     ]
     ss.ios.deployment_target = '12.1'
   end
